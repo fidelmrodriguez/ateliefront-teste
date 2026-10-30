@@ -1054,7 +1054,7 @@ dialog {
 .csv-cards {
   display: none;
 }
-@media (max-width: 767px) {
+@media (max-width: 1110px) {
   .csv-preview {
     overflow: visible;
     min-width: 0;
