@@ -4,6 +4,9 @@ Painel de inscrições desenvolvido para o teste técnico de Front-End do Ateli�
 
 A interface segue a estrutura das referências de desktop, celular e modal fornecidas no Figma. A importação local de CSV foi implementada como funcionalidade opcional.
 
+## Netlify
+https://ateliefront-teste.netlify.app/
+
 ## Executar localmente
 
 Requisitos: Node.js 24 e npm. Versões utilizadas: Node 24.22.1 e npm 11.9.0.
