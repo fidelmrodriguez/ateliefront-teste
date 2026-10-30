@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+  VITE_DEMO = "false"
+  VITE_API_URL = "https://api-teste.ateliedepropaganda.com.br"
+
+# VITE_CANDIDATO deve ser configurado no painel do Netlify para o build.
