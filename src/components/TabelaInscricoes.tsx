@@ -43,7 +43,7 @@ export default function TabelaInscricoes({ inscricoes, onSelect }: Props) {
                   aria-label={`Ver detalhes de ${i.nome}`}
                   onClick={(e) => onSelect(i.id, e.currentTarget)}
                 >
-                  Ver detalhes <span aria-hidden="true">›</span>
+                  <span className="detail-label">Ver detalhes</span> <span aria-hidden="true">›</span>
                 </button>
               </td>
             </tr>
