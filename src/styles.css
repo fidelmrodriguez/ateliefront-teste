@@ -1293,3 +1293,15 @@ html {
     align-self: center;
   }
 }
+
+@media (min-width: 768px) {
+  .table-wrap td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .table-wrap .detail-button {
+    min-height: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
