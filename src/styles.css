@@ -475,7 +475,7 @@ dialog::backdrop {
     max-width: none;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 767px) {
   .topbar {
     padding: 18px 20px;
   }
@@ -878,7 +878,7 @@ dialog {
     max-width: 150px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 1013px) {
   .workspace {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -886,7 +886,7 @@ dialog {
     grid-template-columns: minmax(0, 1fr) 244px;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 767px) {
   .page {
     padding: 20px 16px;
   }

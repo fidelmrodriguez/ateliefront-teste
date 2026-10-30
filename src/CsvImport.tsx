@@ -36,7 +36,7 @@ export default function CsvImport() {
   const valid = rows.filter((row) => row.erros.length === 0).length;
   return (
     <section className="panel csv-panel" aria-label="Importação local de CSV">
-      <details>
+      <details open>
         <summary>
           Importação de CSV <span className="small">· opcional</span>
         </summary>
