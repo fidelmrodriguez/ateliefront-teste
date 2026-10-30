@@ -169,4 +169,37 @@ describe("Painel de inscrições", () => {
     });
     expect(result.violations).toEqual([]);
   });
+  it.each(registros)("compartilha a tag de status no modal de $nome e devolve o foco", async (registro) => {
+    Object.defineProperty(HTMLDialogElement.prototype, "showModal", {
+      configurable: true,
+      value: function (this: HTMLDialogElement) { this.setAttribute("open", ""); },
+    });
+    Object.defineProperty(HTMLDialogElement.prototype, "close", {
+      configurable: true,
+      value: function (this: HTMLDialogElement) { this.removeAttribute("open"); },
+    });
+    vi.mocked(api.detail).mockResolvedValue(registro);
+    const user = userEvent.setup();
+    mount();
+    const opener = await screen.findByRole("button", { name: `Ver detalhes de ${registro.nome}` });
+    await user.click(opener);
+    const modal = await screen.findByRole("dialog");
+    const label = registro.status === "pendente" ? "Pendente" : "Aprovado";
+    const badge = await within(modal).findByText(label);
+    expect(badge).toHaveClass("badge", registro.status);
+    await user.click(within(modal).getByRole("button", { name: "Fechar detalhes" }));
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(opener).toHaveFocus();
+    vi.restoreAllMocks();
+  });
+  it("inicia o CSV aberto e permite recolher a seção", async () => {
+    const user = userEvent.setup();
+    mount();
+    const summary = screen.getByText("Importação de CSV");
+    const details = summary.closest("details");
+    expect(details).toHaveAttribute("open");
+    await user.click(summary);
+    expect(details).not.toHaveAttribute("open");
+  });
+
 });

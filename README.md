@@ -164,3 +164,14 @@ Com mais tempo, priorizaria testes E2E dos fluxos de cadastro e foco do modal, a
 **Tempo dedicado:** 30min
 
 Utilizei ChatGPT/Codex na análise dos requisitos, geração e revisão da implementação, testes e documentação. A verificação incluiu inspeção das referências visuais, build TypeScript/Vite e testes automatizados de interface, CSV e contrato HTTP simulado. As limitações de validação estão descritas acima.
+
+## Organização dos componentes
+
+- `src/App.tsx`: composição da página, aviso de cadastro e seleção do modal.
+- `src/components/`: cabeçalho, indicadores, filtros, tabela, cadastro, modal, tag de status e prévia de CSV.
+- `src/hooks/useInscricoes.ts`: consultas e invalidação do cache de inscrições.
+- `src/hooks/useCadastro.ts`: validação, envio, erros e foco do formulário.
+- `src/hooks/useCsvImport.ts`: leitura e validação local de CSV.
+- `src/api.ts` e `src/csv.ts`: contratos, acesso à API e validação dos arquivos.
+
+Os filtros ficam na lista e os totais usam todos os registros. A tag `StatusBadge` é compartilhada pela tabela e pelo modal. Os cards mobile se aplicam até 767 px; até 1013 px, o formulário fica abaixo da lista. O CSV inicia expandido. As células da tabela usam 10 px de padding vertical.

@@ -287,7 +287,7 @@ th {
   padding: 12px 16px;
 }
 td {
-  padding: 17px 16px;
+  padding: 10px 16px;
   border-bottom: 1px solid #e1e6dc;
   vertical-align: middle;
 }
@@ -721,7 +721,7 @@ th {
   border-bottom: 1px solid #e0e5df;
 }
 td {
-  padding: 15px 16px;
+  padding: 10px 16px;
   font-size: 12px;
 }
 .email {
