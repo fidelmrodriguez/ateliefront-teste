@@ -440,7 +440,11 @@ export function Detalhes({ id, onClose }: { id: string; onClose: () => void }) {
               Nome: detail.data.nome,
               "E-mail": detail.data.email,
               "Origem do cadastro": origemLabel[detail.data.origem],
-              Status: statusLabel[detail.data.status],
+              Status: (
+                <span className={"badge " + detail.data.status}>
+                  {statusLabel[detail.data.status]}
+                </span>
+              ),
               "Data da inscrição": new Intl.DateTimeFormat("pt-BR", {
                 dateStyle: "short",
                 timeStyle: "short",
