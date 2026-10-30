@@ -1286,3 +1286,10 @@ html {
     padding-right: 16px;
   }
 }
+
+@media (max-width: 767px) {
+  .table-wrap td:nth-child(4) {
+    grid-row: 1 / 4;
+    align-self: center;
+  }
+}
