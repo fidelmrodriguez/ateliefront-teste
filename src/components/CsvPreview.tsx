@@ -3,9 +3,8 @@ export default function CsvPreview({ rows }: { rows: CsvRow[] }) {
   return (
     <div
       className="csv-preview"
-      tabIndex={0}
       role="region"
-      aria-label="Prévia das linhas do CSV, role horizontalmente para ver todas as colunas"
+      aria-label="Prévia das linhas do CSV"
     >
       <table>
         <caption className="sr-only">
@@ -37,6 +36,25 @@ export default function CsvPreview({ rows }: { rows: CsvRow[] }) {
           ))}
         </tbody>
       </table>
+      <div className="csv-cards">
+        {rows.map((row) => (
+          <article className="csv-card" key={row.linha} aria-label={`Linha ${row.linha} do CSV`}>
+            <div className="csv-card-heading">
+              <h3>Linha {row.linha}</h3>
+              <span className={"csv-validation " + (row.erros.length ? "csv-invalid" : "csv-valid")}>
+                {row.erros.length ? "Inválido" : "Válido"}
+              </span>
+            </div>
+            <dl>
+              <div><dt>Nome</dt><dd>{row.nome || "Ausente"}</dd></div>
+              <div><dt>E-mail</dt><dd>{row.email || "Ausente"}</dd></div>
+              <div><dt>Origem</dt><dd>{row.origem || "Ausente"}</dd></div>
+            </dl>
+            {row.erros.length > 0 && <div className="csv-card-errors"><strong>Erros</strong><ul>{row.erros.map((error, index) => <li key={index}>{error}</li>)}</ul></div>}
+            {row.avisos.length > 0 && <div className="csv-card-warnings"><strong>Avisos</strong><ul>{row.avisos.map((warning, index) => <li key={index}>{warning}</li>)}</ul></div>}
+          </article>
+        ))}
+      </div>
     </div>
   );
 }
