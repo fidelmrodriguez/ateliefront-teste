@@ -833,7 +833,7 @@ dialog {
 .csv-controls {
   display: flex;
   gap: 20px;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
   margin-top: 18px;
 }
@@ -841,6 +841,9 @@ dialog {
   max-width: 400px;
 }
 .csv-controls a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: 13px;
   text-decoration: underline;
 }
