@@ -67,6 +67,9 @@ main:focus {
   top: 1rem;
 }
 .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background: #162c29;
   color: #fff;
   display: flex;
@@ -1015,4 +1018,9 @@ dialog {
   --color-focus: #1855c6;
   --radius-panel: 10px;
   --space-unit: 4px;
+}
+
+.detail-loading {
+  margin: 0;
+  padding-top: 20px;
 }

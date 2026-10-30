@@ -40,7 +40,7 @@ export default function Detalhes({
           </button>
         </div>
         {detail.isPending ? (
-          <p role="status">Buscando detalhes…</p>
+          <p role="status" className="detail-loading">Buscando detalhes…</p>
         ) : detail.isError ? (
           <div role="alert">
             <p>{mensagemErro(detail.error)}</p>
