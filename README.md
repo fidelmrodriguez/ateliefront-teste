@@ -161,7 +161,7 @@ Com mais tempo, priorizaria testes E2E dos fluxos de cadastro e foco do modal, a
 
 ## Tempo dedicado e ferramentas de apoio
 
-**Tempo dedicado:** 30min
+**Tempo dedicado:** 1h
 
 Utilizei ChatGPT/Codex na análise dos requisitos, geração e revisão da implementação, testes e documentação. A verificação incluiu inspeção das referências visuais, build TypeScript/Vite e testes automatizados de interface, CSV e contrato HTTP simulado. As limitações de validação estão descritas acima.
 
